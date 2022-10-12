@@ -10,23 +10,19 @@ import { PostService } from 'src/app/services/post.service';
 import { PostFeedPageComponent } from './post-feed-page.component';
 
 describe('PostFeedPageComponent', () => {
-  let component: PostFeedPageComponent;
-  let fixture: ComponentFixture<PostFeedPageComponent>;
-
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ PostFeedPageComponent ],
       imports: [HttpClientTestingModule, HttpClientModule, RouterTestingModule], 
       providers: [HttpClient, PostService, AuthService]
     })
-
     .compileComponents();
-    fixture = TestBed.createComponent(PostFeedPageComponent);
-    component = fixture.componentInstance;
-    fixture.autoDetectChanges();
+  
   });
 
   it('should create', () => {
+    const fixture = TestBed.createComponent(PostFeedPageComponent);
+    const component = fixture.componentInstance;
     expect(component).toBeTruthy();
   });
 });
