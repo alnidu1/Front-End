@@ -1,4 +1,4 @@
-<p>
+<p *ngIf="inputComment">
     {{inputComment.text}}
 </p>
 <div class="comment-reply" align="right">
@@ -7,7 +7,7 @@
     </div>
     <form class="form" *ngIf="replyToComment" [formGroup]="commentForm" (ngSubmit)="submitReply($event)">
         <mat-form-field class="full-width" appearance="fill">
-            <mat-label>Make a Post</mat-label>
+            <mat-label id="myLabel">Make a Post</mat-label>
             <textarea matInput autofocus formControlName="text"></textarea>
         </mat-form-field>
         <div align="end">
@@ -16,7 +16,9 @@
         </div>
     </form>
 </div>
-<div *ngFor="let comment of inputComment.comments" class="comment-container">
+<div *ngIf="inputComment">
+<div  *ngFor="let comment of inputComment.comments" class="comment-container">
     <mat-divider></mat-divider>
     <app-comment [comment]="comment"></app-comment>
+</div>
 </div>
