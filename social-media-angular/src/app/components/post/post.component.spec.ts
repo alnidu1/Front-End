@@ -23,4 +23,11 @@ describe('PostComponent', () => {
     const component = fixture.componentInstance;
     expect(component).toBeTruthy();
   });
+
+  it('should render Reply Button', () => {
+    const fixture = TestBed.createComponent(PostComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('.myDiv button')?.textContent).toContain('Reply');
+  });
 });

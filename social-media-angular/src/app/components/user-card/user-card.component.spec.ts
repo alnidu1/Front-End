@@ -22,4 +22,11 @@ describe('UserCardComponent', () => {
     const component = fixture.componentInstance;
     expect(component).toBeTruthy();
   });
+
+  it("should render 'Revature Network'", () => {
+    const fixture = TestBed.createComponent(UserCardComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('.user-card label')?.textContent).toContain('Revature Network');
+  });
 });

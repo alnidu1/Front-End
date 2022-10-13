@@ -22,4 +22,12 @@ describe('CommentComponent', () => {
     const component = fixture.componentInstance;
     expect(component).toBeTruthy();
   });
+
+  it('should render Make a Post prompt', () => {
+    const fixture = TestBed.createComponent(CommentComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    console.log(compiled.querySelector('myLabel'));
+    expect(compiled.querySelector('.comment-reply-text')?.textContent).toContain('reply');
+  });
 });
