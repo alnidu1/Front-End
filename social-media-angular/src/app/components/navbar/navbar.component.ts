@@ -34,5 +34,8 @@ export class NavbarComponent implements OnInit{
     element;
   }
 
-
+  
+  profile() {
+    this.router.navigate(['profile']);
+  }
 }
