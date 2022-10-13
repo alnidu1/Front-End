@@ -48,13 +48,13 @@ describe('NavbarComponent', () => {
   
     });
 
-  // it('button should call DarkToggle function between light and dark', () => {
+  it('button should call DarkToggle function between light and dark', () => {
     
-  //   component.DarkToggle();
-  //   expect(document.body.classList.contains('darkmode')).toBeTruthy();
-  //   component.DarkToggle();
-  //   expect(document.body.classList.contains('darkmode')).toBe(false);
-  // })  
+    component.DarkToggle();
+    expect(document.body.classList.contains('darkmode')).toBeTruthy();
+    component.DarkToggle();
+    expect(document.body.classList.contains('darkmode')).toBe(false);
+  })  
 
 
    });
