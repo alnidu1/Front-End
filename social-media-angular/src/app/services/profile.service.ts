@@ -6,7 +6,7 @@ import User from '../models/User';
 })
 export class ProfileService {
 
-  private baseUrl: string = "http://localhost:8080/profile";
+  private baseUrl: string = "http://localhost:8090/profile";
   constructor(private http:HttpClient) {
     
 
