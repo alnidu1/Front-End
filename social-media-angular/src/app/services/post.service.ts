@@ -27,6 +27,7 @@ export class PostService {
   {
     return this.http.get<User>(this.postUrl+"/fetched/"+firstName+"/"+lastName);
   }
+  
   seeFirst(authorId: number)
   {
     console.log(authorId);

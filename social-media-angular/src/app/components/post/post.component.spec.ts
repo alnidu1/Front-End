@@ -8,23 +8,26 @@ import { PostService } from 'src/app/services/post.service';
 import { PostComponent } from './post.component';
 
 describe('PostComponent', () => {
-  let component: PostComponent;
-  let fixture: ComponentFixture<PostComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ PostComponent ],
-      imports: [HttpClientTestingModule, HttpClientModule, RouterTestingModule, PostService, AuthService], 
-      providers: [HttpClient]
+      imports: [HttpClientTestingModule, HttpClientModule, RouterTestingModule], 
+      providers: [HttpClient, PostService, AuthService]
     })
     .compileComponents();
-
-    fixture = TestBed.createComponent(PostComponent);
-    component = fixture.componentInstance;
-    fixture.autoDetectChanges();
   });
 
   it('should create', () => {
+    const fixture = TestBed.createComponent(PostComponent);
+    const component = fixture.componentInstance;
     expect(component).toBeTruthy();
+  });
+
+  it('should render Reply Button', () => {
+    const fixture = TestBed.createComponent(PostComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('.myDiv button')?.textContent).toContain('Reply');
   });
 });

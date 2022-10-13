@@ -1,10 +1,13 @@
-<mat-card class="user-card">
-    <div class="user-circle"></div>
+<mat-card class="user-card" >
+    <div class="user-circle">   
+    </div>
+    <label>Revature Network</label>
+  
     <mat-divider></mat-divider>
-    <p style="padding-top: 1em; font-weight: bold;">
+    <p *ngIf="user" style="padding-top: 1em; font-weight: bold;">
         {{user.firstName}} {{user.lastName}}
     </p>
-    <p>
+    <p *ngIf="user">
         {{user.email}}
     </p>
     
